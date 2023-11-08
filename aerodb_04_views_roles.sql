@@ -84,6 +84,9 @@ GRANT SELECT ON aerodb.source TO 'Materials';
 GRANT SELECT, INSERT, UPDATE, DELETE ON aerodb.wo TO 'Materials';
 GRANT SELECT, INSERT, UPDATE, DELETE ON aerodb.wo_status TO 'Materials';
 GRANT SELECT ON wo_current_upcoming TO 'Materials';
+GRANT EXECUTE ON PROCEDURE aerodb.get_bom_children TO 'Materials';
+GRANT EXECUTE ON PROCEDURE aerodb.part_info TO 'Materials';
+GRANT EXECUTE ON PROCEDURE aerodb.get_bom_report TO 'Materials';
 
 
 -- Role for shop floor worker and all permissions necessary for those in that role
@@ -98,5 +101,6 @@ GRANT SELECT ON aerodb.shelf TO 'ShopFloor';
 GRANT SELECT ON aerodb.source TO 'ShopFloor';
 GRANT SELECT ON aerodb.wo TO 'ShopFloor';
 GRANT SELECT ON aerodb.wo_status TO 'ShopFloor';
-GRANT EXECUTE ON PROCEDURE aerodb.get_bom_children TO 'Engineer';
-GRANT EXECUTE ON PROCEDURE aerodb.part_info TO 'Engineer';
+GRANT EXECUTE ON PROCEDURE aerodb.get_bom_children TO 'ShopFloor';
+GRANT EXECUTE ON PROCEDURE aerodb.part_info TO 'ShopFloor';
+GRANT EXECUTE ON PROCEDURE aerodb.get_bom_report TO 'ShopFloor';
